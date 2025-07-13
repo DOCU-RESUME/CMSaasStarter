@@ -2,50 +2,46 @@
 
 @plugin '@tailwindcss/typography';
 @plugin "daisyui" {
-  /* Disable all other themes which forces the default theme created below. You can add a dark mode theme using daisyui if you like, and it will automatically use it when the user's system is in dark mode. Docs: https://daisyui.com/docs/themes/ */
+  /* Desativa outros temas para forçar o uso do tema customizado abaixo. */
   themes: false;
 }
 
+/* Bloco de tema para o Currículo Documentado */
 @plugin "daisyui/theme" {
-  name: "saasstartertheme";
-  default: true; /* set as default */
-  prefersdark: false; /* set as default dark mode (prefers-color-scheme:dark) */
-  color-scheme: light; /* color of browser-provided UI */
+  name: "curriculodocumentado"; /* Nome do seu tema */
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
 
-  --color-primary: #180042;
-  --color-primary-content: #fefbf6;
-  --color-secondary: #c7b9f8;
-  --color-secondary-content: oklch(95% 0 0);
-  --color-accent: #db2777;
-  --color-accent-content: #180042;
-  --color-neutral: #180042;
-  --color-neutral-content: #fefbf6;
-  --color-base-100: #fefbf6;
-  --color-base-200: #faedd6;
-  --color-base-300: oklch(92% 0.04 240);
-  --color-base-content: #180042;
-  --color-info: oklch(70% 0.2 220);
-  --color-info-content: oklch(98% 0.01 220);
-  --color-success: #37d399;
-  --color-success-content: oklch(98% 0.01 140);
-  --color-warning: oklch(80% 0.25 80);
-  --color-warning-content: oklch(20% 0.05 80);
-  --color-error: #f77272;
-  --color-error-content: oklch(98% 0.01 30);
+  /* Mapeando as cores da sua marca para as variáveis do DaisyUI */
+  --color-primary: #4ade80;          /* Verde principal */
+  --color-primary-content: #1e293b;  /* Texto escuro para contraste com o verde */
+  --color-secondary: #22c55e;        /* Verde mais escuro */
+  --color-secondary-content: #f1f5f9;/* Texto claro para contraste */
+  --color-accent: #334155;           /* Tom de cinza/azul escuro */
+  --color-accent-content: #f1f5f9;   /* Texto claro */
+  --color-neutral: #1e293b;          /* Cor escura de base */
+  --color-neutral-content: #f1f5f9;  /* Texto claro */
+  --color-base-100: #f1f5f9;         /* Fundo claro (light) */
+  --color-base-200: #e2e8f0;         /* Fundo um pouco mais escuro */
+  --color-base-300: #cbd5e1;         /* Fundo ainda mais escuro */
+  --color-base-content: #1e293b;     /* Conteúdo de texto principal (escuro) */
+  --color-info: #3abff8;
+  --color-info-content: #002b3d;
+  --color-success: #36d399;
+  --color-success-content: #003320;
+  --color-warning: #fbbd23;
+  --color-warning-content: #382800;
+  --color-error: #f87272;
+  --color-error-content: #470000;
 
-  /* border radius */
+  /* Mantendo as configurações de estilo do template */
   --radius-selector: 1rem;
   --radius-field: 0.5rem;
   --radius-box: 0.5rem;
-
-  /* base sizes */
   --size-selector: 0.25rem;
   --size-field: 0.25rem;
-
-  /* border size */
   --border: 1px;
-
-  /* effects */
   --depth: 1;
   --noise: 0;
 }
