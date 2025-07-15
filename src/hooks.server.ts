@@ -6,8 +6,32 @@ import {
 } from "$env/static/public"
 import { createServerClient } from "@supabase/ssr"
 import { createClient } from "@supabase/supabase-js"
-import type { Handle } from "@sveltejs/kit"
+import { redirect, type Handle } from "@sveltejs/kit"
 import { sequence } from "@sveltejs/kit/hooks"
+// MEU
+import { EXTERNAL_APP_URL } from "$env/static/private"
+
+// MEU
+const accountRedirector: Handle = async ({ event, resolve }) => {
+  if (event.url.pathname.startsWith("/account")) {
+    // Pega a sessão do usuário que acabou de logar
+    const { session } = await event.locals.safeGetSession()
+
+    if (session) {
+      // Se temos uma sessão, construímos a URL com o hash
+      const redirectUrl = new URL(EXTERNAL_APP_URL)
+      redirectUrl.hash = `access_token=${session.access_token}&refresh_token=${session.refresh_token}`
+
+      // Redirecionamos para a nova URL completa
+      redirect(303, redirectUrl.toString())
+    } else {
+      // Se por algum motivo não houver sessão, redireciona para o login
+      redirect(303, "/login")
+    }
+  }
+
+  return resolve(event)
+}
 
 export const supabase: Handle = async ({ event, resolve }) => {
   event.locals.supabase = createServerClient(
@@ -16,11 +40,6 @@ export const supabase: Handle = async ({ event, resolve }) => {
     {
       cookies: {
         getAll: () => event.cookies.getAll(),
-        /**
-         * SvelteKit's cookies API requires `path` to be explicitly set in
-         * the cookie options. Setting `path` to `/` replicates previous/
-         * standard behavior.
-         */
         setAll: (cookiesToSet) => {
           cookiesToSet.forEach(({ name, value, options }) => {
             event.cookies.set(name, value, { ...options, path: "/" })
@@ -36,7 +55,6 @@ export const supabase: Handle = async ({ event, resolve }) => {
     { auth: { persistSession: false } },
   )
 
-  // https://github.com/supabase/auth-js/issues/888#issuecomment-2189298518
   if ("suppressGetSessionWarning" in event.locals.supabase.auth) {
     // @ts-expect-error - suppressGetSessionWarning is not part of the official API
     event.locals.supabase.auth.suppressGetSessionWarning = true
@@ -46,11 +64,6 @@ export const supabase: Handle = async ({ event, resolve }) => {
     )
   }
 
-  /**
-   * Unlike `supabase.auth.getSession()`, which returns the session _without_
-   * validating the JWT, this function also calls `getUser()` to validate the
-   * JWT before returning the session.
-   */
   event.locals.safeGetSession = async () => {
     const {
       data: { session },
@@ -64,7 +77,6 @@ export const supabase: Handle = async ({ event, resolve }) => {
       error: userError,
     } = await event.locals.supabase.auth.getUser()
     if (userError) {
-      // JWT validation has failed
       return { session: null, user: null, amr: null }
     }
 
@@ -84,8 +96,6 @@ export const supabase: Handle = async ({ event, resolve }) => {
   })
 }
 
-// Not called for prerendered marketing pages so generally okay to call on ever server request
-// Next-page CSR will mean relatively minimal calls to this hook
 const authGuard: Handle = async ({ event, resolve }) => {
   const { session, user } = await event.locals.safeGetSession()
   event.locals.session = session
@@ -94,4 +104,4 @@ const authGuard: Handle = async ({ event, resolve }) => {
   return resolve(event)
 }
 
-export const handle: Handle = sequence(supabase, authGuard)
+export const handle: Handle = sequence(supabase, accountRedirector, authGuard)
