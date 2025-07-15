@@ -6,10 +6,10 @@
 </script>
 
 <svelte:head>
-  <title>Forgot Password</title>
+  <title>Esqueci a Senha</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Forgot Password</h1>
+<h1 class="text-2xl font-bold mb-6">Esqueci a Senha</h1>
 <Auth
   supabaseClient={data.supabase}
   view="forgotten_password"
@@ -21,6 +21,5 @@
   additionalData={undefined}
 />
 <div class="text-l text-slate-800 mt-4">
-  Remember your password? <a class="underline" href="/login/sign_in">Sign in</a
-  >.
+  Lembrou sua senha? <a class="underline" href="/login/sign_in">Entrar</a>.
 </div>

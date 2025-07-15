@@ -56,8 +56,8 @@
   additionalData={undefined}
 />
 <div class="text-l text-slate-800 mt-4">
-  <a class="underline" href="/login/forgot_password">Forgot password?</a>
+  <a class="underline" href="/login/forgot_password">Esqueceu a senha?</a>
 </div>
 <div class="text-l text-slate-800 mt-3">
-  Don't have an account? <a class="underline" href="/login/sign_up">Sign up</a>.
+  Não tem uma conta? <a class="underline" href="/login/sign_up">Inscreva-se</a>.
 </div>

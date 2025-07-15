@@ -51,7 +51,7 @@
 >
   <div class="flex flex-col w-64 lg:w-80">
     <div>
-      <h1 class="text-2xl font-bold mb-6">Create Profile</h1>
+      <h1 class="text-2xl font-bold mb-6">Criar Perfil</h1>
       <form
         class="form-widget"
         method="POST"
@@ -60,7 +60,7 @@
       >
         <div class="mt-4">
           <label for="fullName">
-            <span class="text-l text-center">Your Name</span>
+            <span class="text-l text-center">Seu Nome</span>
           </label>
           <input
             id="fullName"
@@ -77,7 +77,7 @@
 
         <div class="mt-4">
           <label for="companyName">
-            <span class="text-l text-center">Company Name</span>
+            <span class="text-l text-center">Nome da Empresa</span>
           </label>
           <input
             id="companyName"
@@ -94,7 +94,7 @@
 
         <div class="mt-4">
           <label for="website">
-            <span class="text-l text-center">Company Website</span>
+            <span class="text-l text-center">Website da Empresa</span>
           </label>
           <input
             id="website"
@@ -125,9 +125,9 @@
       </form>
 
       <div class="text-sm text-slate-800 mt-14">
-        You are logged in as {user?.email}.
+        Você está logado como {user?.email}.
         <br />
-        <a class="underline" href="/account/sign_out"> Sign out </a>
+        <a class="underline" href="/account/sign_out"> Sair </a>
       </div>
     </div>
   </div>

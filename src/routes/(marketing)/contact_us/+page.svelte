@@ -78,18 +78,18 @@
     class="max-w-[400px] lg:max-w-[500px] flex flex-col place-content-center p-4 lg:mr-8 lg:mb-8 lg:min-h-[70vh]"
   >
     <div class="px-6">
-      <h1 class="text-2xl lg:text-4xl font-bold mb-4">Contact Us</h1>
-      <p class="text-lg">Talk to one of our service professionals to:</p>
+      <h1 class="text-2xl lg:text-4xl font-bold mb-4">Contate-nos</h1>
+      <p class="text-lg">
+        Fale com um de nossos profissionais de serviço para:
+      </p>
       <ul class="list-disc list-outside pl-6 py-4 space-y-1">
-        <li class="">Get a live demo</li>
-        <li class="">Discuss your specific needs</li>
-        <li>Get a quote</li>
-        <li>Answer any technical questions you have</li>
+        <li class="">Obter uma demonstração ao vivo</li>
+        <li class="">Discutir suas necessidades específicas</li>
+        <li>Obter uma cotação</li>
+        <li>Responder a quaisquer perguntas técnicas que você tenha</li>
       </ul>
-      <p>Once you complete the form, we'll reach out to you! *</p>
-      <p class="text-sm pt-8">
-        *Not really for this demo page, but you should say something like that
-        😉
+      <p>
+        Assim que você preencher o formulário, entraremos em contato com você! *
       </p>
     </div>
   </div>
@@ -102,8 +102,10 @@
         <div
           class="card card-bordered shadow-lg py-6 px-6 mx-2 lg:mx-0 lg:p-6 mb-10"
         >
-          <div class="text-2xl font-bold mb-4">Thank you!</div>
-          <p class="">We've received your message and will be in touch soon.</p>
+          <div class="text-2xl font-bold mb-4">Obrigado!</div>
+          <p class="">
+            Recebemos sua mensagem e entraremos em contato em breve.
+          </p>
         </div>
       </div>
     {:else}
