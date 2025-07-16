@@ -77,7 +77,7 @@
         class="text-4xl md:text-6xl font-bold px-2"
         style="line-height: 1.2;"
       >
-        O fim do currículo estático. Crie um
+        O fim da documentação manual. Crie um
         <span
           class="underline decoration-secondary decoration-4 md:decoration-[6px]"
           >currículo vivo</span
