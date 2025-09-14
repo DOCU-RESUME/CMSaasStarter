@@ -5,6 +5,8 @@
   import { onMount } from "svelte"
   import { page } from "$app/stores"
 
+  import { PUBLIC_EXTERNAL_APP_URL } from "$env/static/public"
+
   let { data } = $props()
   let { supabase } = data
 
@@ -21,6 +23,27 @@
       }
     })
   })
+
+  // onMount(() => {
+  //   supabase.auth.onAuthStateChange((event, session) => {
+  //     // Verifica se o evento é de login E se a sessão existe
+  //     if (event === "SIGNED_IN" && session) {
+  //       // Pega os tokens diretamente da sessão
+  //       const { access_token, refresh_token } = session
+
+  //       // Constrói a URL final para a sua aplicação Vue
+  //       const redirectUrl = new URL(PUBLIC_EXTERNAL_APP_URL)
+  //       redirectUrl.hash = `access_token=${access_token}&refresh_token=${refresh_token}`
+
+  //       // Redireciona o navegador para a aplicação externa.
+  //       // Usamos `window.location.replace` para que o usuário não possa
+  //       // voltar para a página de login com o botão "voltar" do navegador.
+  //       setTimeout(() => {
+  //         window.location.replace(redirectUrl.href)
+  //       }, 1)
+  //     }
+  //   })
+  // })
 </script>
 
 <svelte:head>

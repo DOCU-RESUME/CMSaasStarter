@@ -14,21 +14,22 @@ export const pricingPlans = [
       "Exportação do Currículo em PDF",
     ],
   },
-  // {
-  //   id: "pro",
-  //   name: "Pro",
-  //   description:
-  //     "A plan to test the purchase experience. Try buying this with the test credit card 4242424242424242.",
-  //   price: "$5",
-  //   priceIntervalName: "per month",
-  //   stripe_price_id: "price_1NkdZCHMjzZ8mGZnRSjUm4yA",
-  //   stripe_product_id: "prod_OXj1CcemGMWOlU",
-  //   features: [
-  //     "Everything in Free",
-  //     "Support us with fake money",
-  //     "Test the purchase experience",
-  //   ],
-  // },
+  {
+    id: "pro",
+    name: "Pro",
+    description:
+      "A versão completa do curriculo, com suporte ilimitado a função de exportação em PDF e importação automática do Lattes.",
+    price: "R$49.90",
+    priceIntervalName: "por mês",
+    stripe_price_id: "price_1S714RInNRQXSAqDsEZMXCVQ",
+    stripe_product_id: "prod_T37JY67fD9FU4O",
+    features: [
+      "Tudo no plano Grátis",
+      "Exportações em PDF ilimitadas",
+      "Importação automática do Lattes",
+      "Suporte prioritário",
+    ],
+  },
   // {
   //   id: "enterprise",
   //   name: "Enterprise",

@@ -13,35 +13,31 @@
 
   const planFeatures: PlanFeatureRow[] = [
     {
-      name: "Section 1",
+      name: "Funcionalidades",
       header: true,
     },
     {
-      name: "Feature 1",
+      name: "Criação de Sessões",
       freeIncluded: true,
       proIncluded: true,
     },
     {
-      name: "Feature 2",
-      freeIncluded: false,
-      proIncluded: true,
-    },
-    {
-      name: "Feature 3",
-      freeString: "3",
-      proString: "Unlimited",
-    },
-    {
-      name: "Section 2",
-      header: true,
-    },
-    {
-      name: "Feature 4",
+      name: "Criação de sub-sessões",
       freeIncluded: true,
       proIncluded: true,
     },
     {
-      name: "Feature 5",
+      name: "Anexo de comprovantes",
+      freeIncluded: true,
+      proIncluded: true,
+    },
+    {
+      name: "Exportação para pdf",
+      freeString: "Limitado a 3",
+      proIncluded: true,
+    },
+    {
+      name: "Importação automática do Lattes",
       freeIncluded: false,
       proIncluded: true,
     },
@@ -61,15 +57,13 @@
 
   <div class="w-full my-8">
     <PricingModule callToAction="Começar" highlightedPlanId="pro" />
-    <h1 class="text-2xl font-bold text-center mt-24">
-      Perguntas Frequentes sobre Preços
-    </h1>
+    <!-- <h1 class="text-2xl font-bold text-center mt-24">Perguntas Frequentes</h1> -->
     <!-- <div class="flex place-content-center">
       <div class="join join-vertical max-w-xl py-6 mx-auto">
         <div class="collapse collapse-arrow join-item border border-primary">
           <input type="radio" name="faq-accordion" />
           <div class="collapse-title text-lg font-medium">
-            Is this template free to use?
+            O plano gratuito inclui a exportação para pdf?
           </div>
           <div class="collapse-content">
             <p>Yup! This template is free to use for any project.</p>
