@@ -5,9 +5,9 @@
   type PlanFeatureRow = {
     name: string
     freeIncluded?: boolean
-    proIncluded?: boolean
+    paidIncluded?: boolean
     freeString?: string
-    proString?: string
+    paidString?: string
     header?: boolean
   }
 
@@ -19,27 +19,27 @@
     {
       name: "Criação de Sessões",
       freeIncluded: true,
-      proIncluded: true,
+      paidIncluded: true,
     },
     {
       name: "Criação de sub-sessões",
       freeIncluded: true,
-      proIncluded: true,
+      paidIncluded: true,
     },
     {
       name: "Anexo de comprovantes",
       freeIncluded: true,
-      proIncluded: true,
+      paidIncluded: true,
     },
     {
       name: "Exportação para pdf",
       freeString: "Limitado a 3",
-      proIncluded: true,
+      paidIncluded: true,
     },
     {
       name: "Importação automática do Lattes",
       freeIncluded: false,
-      proIncluded: true,
+      paidIncluded: true,
     },
   ]
 </script>
@@ -56,7 +56,7 @@
   </h2> -->
 
   <div class="w-full my-8">
-    <PricingModule callToAction="Começar" highlightedPlanId="pro" />
+    <PricingModule callToAction="Começar" highlightedPlanId="lattes" />
     <!-- <h1 class="text-2xl font-bold text-center mt-24">Perguntas Frequentes</h1> -->
     <!-- <div class="flex place-content-center">
       <div class="join join-vertical max-w-xl py-6 mx-auto">
@@ -183,9 +183,9 @@
                   {/if}
                 </td>
                 <td class="text-center">
-                  {#if feature.proString}
-                    {feature.proString}
-                  {:else if feature.proIncluded}
+                  {#if feature.paidString}
+                    {feature.paidString}
+                  {:else if feature.paidIncluded}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="w-8 h-8 ml-2 inline text-success"
