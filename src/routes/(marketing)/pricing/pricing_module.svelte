@@ -45,7 +45,7 @@
         <div class="pt-8">
           <span class="text-4xl font-bold">{plan.price}</span>
           <span class="text-gray-400">{plan.priceIntervalName}</span>
-          <div class="mt-6 pt-4 flex-1 flex flex-row items-center">
+          <!-- <div class="mt-6 pt-4 flex-1 flex flex-row items-center">
             {#if plan.id === currentPlanId}
               <div
                 class="btn btn-outline btn-success no-animation w-[80%] mx-auto cursor-default"
@@ -61,7 +61,7 @@
                 {callToAction}
               </a>
             {/if}
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
