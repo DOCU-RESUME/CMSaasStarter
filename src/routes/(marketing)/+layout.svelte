@@ -19,7 +19,7 @@
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1 hidden sm:flex font-bold text-lg">
       <li class="md:mx-2"><a href="/#features">Funcionalidades</a></li>
-      <li class="md:mx-2"><a href="/pricing">Planos</a></li>
+      <!-- <li class="md:mx-2"><a href="/pricing">Planos</a></li> -->
       <li class="md:mx-2">
         <a href="/login" class="btn btn-primary text-white">Entrar</a>
       </li>
